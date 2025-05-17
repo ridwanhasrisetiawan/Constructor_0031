@@ -8,19 +8,25 @@ private:
 public:
     angka(int); // constructor
     ~angka();   // destructor
-    void cetakdata();
-    void isidata();
+    void cetakData();
+    void isiData();
 };
 // definisi member Function
 angka::angka(int i){ // constructor
     panjang = i;
     arr = new int[i];
-    isidata();
+    isiData();
 }
 
 angka::~angka(){ //destructor
     cout<<endl;
-    cetakdata();
+    cetakData();
     delete[]arr;
     cout<<"Alamat Array Sudah Dilepaskan"<<endl;
+}
+
+void angka::cetakData(){
+    for(int i=1;i<=panjang;i++){
+        cout<<i<<"="<<arr[i]<<endl;
+    }
 }
